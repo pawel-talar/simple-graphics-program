@@ -5,29 +5,30 @@ window.onload = function() {
   canvas = document.getElementById("drawingCanvas");
   ctx = canvas.getContext("2d");
 
-  canvas.onmousedown = startDrawing;
-  canvas.onmouseup = stopDrawing;
-  canvas.onmouseout = stopDrawing;
-  canvas.onmousemove = draw;
+  canvas.onmousedown = startDrawing; // wcisniecie prawego przycisku myszki powoduje zaczecie rysowania
+  canvas.onmouseup = stopDrawing; // zwonienie prawego przycisku myszki przerywa rysowanie
+  canvas.onmouseout = stopDrawing; // wyjechanie kursorem poza canvas przerywa rysowanie
+  canvas.onmousemove = draw; // poruszanie myszka powoduje rysowanie
 };
 
-var isDrawing = false;
+var isDrawing = false; // zmienna logiczna, ktora przechowuje informacje o tym czy skrypt ma rysowac, czy nie
 
-function startDrawing(e) {
+function startDrawing(e) { // funkcja odpowiadajaca za rozpoczecie rysowania
   isDrawing = true;
-  ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+  ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop); // przesuniece olowka w miejsce, w którym znajduje sie kursor myszki
 }
 
-function stopDrawing() {
+function stopDrawing() {  
   isDrawing = false;
 }
-
-function draw(e) {
-  if (isDrawing == true) {
+ 
+function draw(e) { // funkcja rysujaca
+  if (isDrawing == true) { // jesli masz rysowac to...
+    // ustalanie wpolrzednych rysowanej linii
     var x = e.pageX - canvas.offsetLeft;
-    var y = e.pageY - canvas.offsetTop;
-    ctx.lineTo(x, y);
-    ctx.stroke();	
+    var y = e.pageY - canvas.offsetTop;   
+    ctx.lineTo(x, y); // zaznaczenie linii o powyzszych wspolrzednych 
+    ctx.stroke(); // narysowanie zadanej linii	
   }
 }
 
