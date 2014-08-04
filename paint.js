@@ -1,14 +1,36 @@
-var canvas;
+﻿var canvas;
 var ctx;
-window.onload = function () {
-	canvas = document.getElementById("drawingCanvas");
-	ctx = canvas.getContext("2d");
-	canvas.mousedown = startDrawing; // jesli klawisz myszy jest wcisniety to zacznij rysowac
-	canvas.onmouseup = stopDrawing; // jesli klawisz myszy jest zwolniony to przestan rysowac
-	canvas.onmouseout = stopDrawing; // jesli kursor myszy wyszedl poza canvas to przestan rysowac
-	canvas.onmousemove = draw; // jesli kursor jest w ruchu to rysuj
+
+window.onload = function() {
+  canvas = document.getElementById("drawingCanvas");
+  ctx = canvas.getContext("2d");
+
+  ctx.onmousedown = startDrawing;
+  ctx.onmouseup = stopDrawing;
+  ctx.onmouseout = stopDrawing;
+  ctx.onmousemove = draw;
 };
 
+var isDrawing = false;
+
+function startDrawing(e) {
+  isDrawing = true;
+  ctx.beginPath();
+  ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+}
+
+function stopDrawing() {
+  isDrawing = false;
+}
+
+function draw(e) {
+  if (isDrawing == true) {
+    var x = e.pageX - canvas.offsetLeft;
+    var y = e.pageY - canvas.offsetTop;
+    ctx.lineTo(x, y);
+    ctx.stroke();	
+  }
+}
 var previousColorElement; // wczesniejszy color
 function changeColor(color, imgElement){ // funkcja zmieniajaca kolor rysowania
 	ctx.strokeStyle = color; // zmien color rysowania na kolor wybrany przez uzytkownika
@@ -27,16 +49,4 @@ function changeSize(size, imgElement){ // funkcja zmieniajaca rozmiar "pisaka"
 		previousSizeElement.className = " ";
 		previousSizeElement = imgElement;				
 	}
-}
-
-var isDrawing = false;
-function startDrawing(e){
-	isDrawing = true;
-	var x = e.pageX - canvas.offsetLeft;
-   var y = e.pageY - canvas.offsetTop;
-   ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
-}
-
-function stopDrawing(){
-	isDrawing = false;
 }
