@@ -32,7 +32,7 @@ function draw(e) { // funkcja rysujaca
   }
 }
 
-var previousColorElement;
+var previousColorElement; // wczesniejszy kolor z palety
 function changeColor(color, imgElement) {
   ctx.strokeStyle = color;
   imgElement.className = "Selected";
@@ -40,9 +40,9 @@ function changeColor(color, imgElement) {
   previousColorElement = imgElement;
 }
 
-var previousSizeElement;
+var previousSizeElement; // wczesniejszy rozmiar 
 function changeSize(size, imgElement) {
-  ctx.lineWidth = thickness;
+  ctx.lineWidth = size;
   imgElement.className = "Selected";
   if (previousSizeElement != null) previousThicknessElement.className = "";
   previousSizeElement = imgElement;
