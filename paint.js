@@ -5,17 +5,16 @@ window.onload = function() {
   canvas = document.getElementById("drawingCanvas");
   ctx = canvas.getContext("2d");
 
-  ctx.onmousedown = startDrawing;
-  ctx.onmouseup = stopDrawing;
-  ctx.onmouseout = stopDrawing;
-  ctx.onmousemove = draw;
+  canvas.onmousedown = startDrawing;
+  canvas.onmouseup = stopDrawing;
+  canvas.onmouseout = stopDrawing;
+  canvas.onmousemove = draw;
 };
 
 var isDrawing = false;
 
 function startDrawing(e) {
   isDrawing = true;
-  ctx.beginPath();
   ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
 }
 
@@ -31,22 +30,19 @@ function draw(e) {
     ctx.stroke();	
   }
 }
-var previousColorElement; // wczesniejszy color
-function changeColor(color, imgElement){ // funkcja zmieniajaca kolor rysowania
-	ctx.strokeStyle = color; // zmien color rysowania na kolor wybrany przez uzytkownika
-	imgElement.className = "Selected"; // oznacz kolor na palecie jako wybrany
-	if (previousColorElement != null) { // jesli wczesniejszy kolor istnieje
-		previousColorElement.className = " "; // odznacz go jako wybrany na palecie
-		previousColorElement = imgElement;	// do wczesniejszego koloru przypisz obecny
-	}
+
+var previousColorElement;
+function changeColor(color, imgElement) {
+  ctx.strokeStyle = color;
+  imgElement.className = "Selected";
+  if (previousColorElement != null) previousColorElement.className = "";
+  previousColorElement = imgElement;
 }
 
-var previousSizeElement; //wczesniejszy rozmiar
-function changeSize(size, imgElement){ // funkcja zmieniajaca rozmiar "pisaka"
-	ctx.lineWidth = size; 
-	imgElement.className = "Selected";
-	if (previousSizeElement != null) {
-		previousSizeElement.className = " ";
-		previousSizeElement = imgElement;				
-	}
+var previousSizeElement;
+function changeSize(size, imgElement) {
+  ctx.lineWidth = thickness;
+  imgElement.className = "Selected";
+  if (previousSizeElement != null) previousThicknessElement.className = "";
+  previousSizeElement = imgElement;
 }
