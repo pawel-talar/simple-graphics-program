@@ -36,3 +36,7 @@ function startDrawing(e){
    var y = e.pageY - canvas.offsetTop;
    ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
 }
+
+function stopDrawing(){
+	isDrawing = false;
+}
