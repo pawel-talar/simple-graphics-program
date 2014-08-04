@@ -4,15 +4,15 @@
 
 .Toolbar {
   float: left;
-  font-family: 'Trebuchet MS'; 
-  font-size: 14px;
-  font-variant: small-caps;
+  font-family: 'Verdana'; 
+  font-size: 18px;
+  font-variant: normal;
   text-align: center;
-  background: #F2F7FE;
+  background: #F2D7FE;
   padding: 10px 15px 3px 10px;
   margin-bottom: 1px;
   margin-right: 1px;
-  border: 1px solid #7B899B;
+  border: 2px solid #7B899B;
 }
 
 .Toolbar button {
@@ -43,13 +43,4 @@ img:hover {
 
 img.Selected {
   border: 2px groove #E4F0FE;
-}
-
-#savedCopyContainer {
-  display: none;
-}
-
-#savedCopyContainer img {
-  width: 250px;
-  height: 150px;
 }
