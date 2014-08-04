@@ -18,4 +18,13 @@ function changeColor(color, imgElement){ // funkcja zmieniajaca kolor rysowania
 		previousColorElement = imgElement;	// do wczesniejszego koloru przypisz obecny
 	}
 }
-	
+
+var previousSizeElement; //wczesniejszy rozmiar
+function changeSize(size, imgElement){ // funkcja zmieniajaca rozmiar "pisaka"
+	ctx.lineWidth = size; 
+	imgElement.className = "Selected";
+	if (previousSizeElement != null) {
+		previousSizeElement.className = " ";
+		previousSizeElement = imgElement;				
+	}
+}
