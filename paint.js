@@ -28,3 +28,11 @@ function changeSize(size, imgElement){ // funkcja zmieniajaca rozmiar "pisaka"
 		previousSizeElement = imgElement;				
 	}
 }
+
+var isDrawing = false;
+function startDrawing(e){
+	isDrawing = true;
+	var x = e.pageX - canvas.offsetLeft;
+   var y = e.pageY - canvas.offsetTop;
+   ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+}
