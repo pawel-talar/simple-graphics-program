@@ -32,6 +32,11 @@ function draw(e) { // funkcja rysujaca
   }
 }
 
+function clearCanvas() {
+	ctx.fillStyle = "white";
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
 var previousColorElement; // wczesniejszy kolor z palety
 function changeColor(color, imgElement) {
   ctx.strokeStyle = color;
