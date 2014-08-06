@@ -33,8 +33,7 @@ function draw(e) { // funkcja rysujaca
 }
 
 function clearCanvas() {
-	ctx.fillStyle = "white";
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.beginPath();
 }
 
