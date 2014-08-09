@@ -15,6 +15,7 @@ var isDrawing = false; // zmienna logiczna, ktora przechowuje informacje o tym c
 
 function startDrawing(e) { // funkcja odpowiadajaca za rozpoczecie rysowania
   isDrawing = true;
+  ctx.beginPath();
   ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop); // przesuniece olowka w miejsce, w którym znajduje sie kursor myszki
 }
 
@@ -39,7 +40,7 @@ function clearCanvas() {
 
 var previousColorElement; // wczesniejszy kolor z palety
 function changeColor(color, imgElement) {
-  ctx.strokeStyle = color;
+  ctx.strokeStyle = "color";
   imgElement.className = "Selected";
   if (previousColorElement != null) previousColorElement.className = "";
   previousColorElement = imgElement;
@@ -49,6 +50,6 @@ var previousSizeElement; // wczesniejszy rozmiar
 function changeSize(size, imgElement) {
   ctx.lineWidth = size;
   imgElement.className = "Selected";
-  if (previousSizeElement != null) previousThicknessElement.className = "";
+  if (previousSizeElement != null) previousSizeElement.className = "";
   previousSizeElement = imgElement;
 }
