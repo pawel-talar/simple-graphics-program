@@ -50,7 +50,7 @@ function changeColor(color, imgElement) {
   if (color == 8) ctx.strokeStyle = "purple";
   if (color == 9) ctx.strokeStyle = "red";
   if (color == 10) ctx.strokeStyle = "white";
-  if (color == 11) ctx.strokeStyle = "yellow"; 
+  if (color == 11) ctx.strokeStyle = "gold"; 
   imgElement.className = "Selected";
   if (previousColorElement != null) previousColorElement.className = "";
   previousColorElement = imgElement;
