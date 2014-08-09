@@ -1,4 +1,4 @@
-﻿var canvas;
+var canvas;
 var ctx;
 
 window.onload = function() {
@@ -33,8 +33,8 @@ function draw(e) { // funkcja rysujaca
 }
 
 function clearCanvas() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	ctx.beginPath();
+	ctx.clearRect(0, 0, canvas.width, canvas.height); //czysc cale plotno
+	ctx.beginPath(); // rozpocznij nowa sciezke rysowania
 }
 
 var previousColorElement; // wczesniejszy kolor z palety
