@@ -39,8 +39,18 @@ function clearCanvas() {
 }
 
 var previousColorElement; // wczesniejszy kolor z palety
-function changeColor(color, imgElement) {
-  ctx.strokeStyle = "color";
+function changeColor(color, imgElement) {  	
+  if (color == 1) ctx.strokeStyle = "black";
+  if (color == 2) ctx.strokeStyle = "blue";
+  if (color == 3) ctx.strokeStyle = "brown";
+  if (color == 4) ctx.strokeStyle = "green";
+  if (color == 5) ctx.strokeStyle = "grey";
+  if (color == 6) ctx.strokeStyle = "orange";
+  if (color == 7) ctx.strokeStyle = "pink";
+  if (color == 8) ctx.strokeStyle = "purple";
+  if (color == 9) ctx.strokeStyle = "red";
+  if (color == 10) ctx.strokeStyle = "white";
+  if (color == 11) ctx.strokeStyle = "yellow"; 
   imgElement.className = "Selected";
   if (previousColorElement != null) previousColorElement.className = "";
   previousColorElement = imgElement;
