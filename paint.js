@@ -39,7 +39,7 @@ function draw(e) { // funkcja rysujaca
   }
 }
 
-//funkcja czysci plotno i dodaje tlo za pomoca funkcji addBackground
+// funkcja czysci plotno i dodaje tlo za pomoca funkcji addBackground
 function clearCanvas() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height); //czysc cale plotno
 	addBackground();
@@ -47,7 +47,7 @@ function clearCanvas() {
 }
 
 var previousColorElement; // wczesniejszy kolor z palety
-//funkcja zmieniajaca kolor na wybrany z palety
+// funkcja zmieniajaca kolor na wybrany z palety
 function changeColor(color, imgElement) {  	
   if (color == 1) ctx.strokeStyle = "black";
   else if (color == 2) ctx.strokeStyle = "blue";
@@ -66,10 +66,18 @@ function changeColor(color, imgElement) {
 }
 
 var previousSizeElement; // wczesniejszy rozmiar
-//funkcja zmieniajaca rozmiar "pedzla" 
+// funkcja zmieniajaca rozmiar "pedzla" 
 function changeSize(size, imgElement) {
   ctx.lineWidth = size;
   imgElement.className = "Selected";
   if (previousSizeElement != null) previousSizeElement.className = "";
   previousSizeElement = imgElement;
+}																																		
+
+// funkcja zapisujaca obraz narysowany przez uzytkownika
+function saveCanvas() {
+	var image = document.getElementById("savedImage");
+	image.src = canvas.toDataURL();
+	var imageContainer = document.getElementById("copyContainer");
+	imageContainer.style.display = "block";
 }

@@ -44,3 +44,12 @@ img:hover {
 img.Selected {
   border: 3px groove #E4F0FE;
 }
+
+#copyContainer {
+	display: none;
+}
+
+#copyContainer img{
+	width: 250px;
+	height: 150px;
+}
