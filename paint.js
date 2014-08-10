@@ -4,7 +4,6 @@ var ctx;
 window.onload = function() {
   canvas = document.getElementById("drawingCanvas");
   ctx = canvas.getContext("2d");
-
   canvas.onmousedown = startDrawing; // wcisniecie prawego przycisku myszki powoduje zaczecie rysowania
   canvas.onmouseup = stopDrawing; // zwonienie prawego przycisku myszki przerywa rysowanie
   canvas.onmouseout = stopDrawing; // wyjechanie kursorem poza canvas przerywa rysowanie
@@ -41,16 +40,16 @@ function clearCanvas() {
 var previousColorElement; // wczesniejszy kolor z palety
 function changeColor(color, imgElement) {  	
   if (color == 1) ctx.strokeStyle = "black";
-  if (color == 2) ctx.strokeStyle = "blue";
-  if (color == 3) ctx.strokeStyle = "brown";
-  if (color == 4) ctx.strokeStyle = "green";
-  if (color == 5) ctx.strokeStyle = "grey";
-  if (color == 6) ctx.strokeStyle = "orange";
-  if (color == 7) ctx.strokeStyle = "pink";
-  if (color == 8) ctx.strokeStyle = "purple";
-  if (color == 9) ctx.strokeStyle = "red";
-  if (color == 10) ctx.strokeStyle = "white";
-  if (color == 11) ctx.strokeStyle = "gold"; 
+ else if (color == 2) ctx.strokeStyle = "blue";
+ else if (color == 3) ctx.strokeStyle = "brown";
+ else if (color == 4) ctx.strokeStyle = "green";
+ else if (color == 5) ctx.strokeStyle = "grey";
+ else if (color == 6) ctx.strokeStyle = "orange";
+ else if (color == 7) ctx.strokeStyle = "pink";
+ else if (color == 8) ctx.strokeStyle = "purple";
+ else if (color == 9) ctx.strokeStyle = "red";
+ else if (color == 10) ctx.strokeStyle = "white";
+ else if (color == 11) ctx.strokeStyle = "gold"; 
   imgElement.className = "Selected";
   if (previousColorElement != null) previousColorElement.className = "";
   previousColorElement = imgElement;
