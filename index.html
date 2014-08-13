@@ -7,36 +7,34 @@
 		<script src="paint.js"></script>
 	</head>
 	<body>
-		<div class="Toolbar">
-			COLOR <br>
-			<img id="black" src="black.png" alt="Black" onclick="changeColor(1, this)">	
-			<img id="blue" src="blue.png" alt="Blue" onclick="changeColor(2, this)">	
-			<img id="brown" src="brown.png" alt="Brown" onclick="changeColor(3, this)">	
-			<img id="green" src="green.png" alt="Green" onclick="changeColor(4, this)">	
-			<img id="grey" src="grey.png" alt="Grey" onclick="changeColor(5, this)">	
-			<img id="orange" src="orange.png" alt="Orange" onclick="changeColor(6, this)">
-			<br>	
-			<img id="pink" src="pink.png" alt="Pink" onclick="changeColor(7, this)">	
-			<img id="purple" src="purple.png" alt="Purple" onclick="changeColor(8, this)">	
-			<img id="red" src="red.png" alt="Red" onclick="changeColor(9, this)">	
-			<img id="white" src="white.png" alt="White" onclick="changeColor(10, this)">	
-			<img id="yellow" src="yellow.png" alt="Yellow" onclick="changeColor(11, this)">	
-		</div>
-		<div class="Toolbar">
-			SIZE <br>
-			<img id="small" src="small.png" alt="Small" onclick="changeSize(3, this)">	
-			<img id="medium" src="medium.png" alt="Medium" onclick="changeSize(6, this)">	
-			<img id="big" src="big.png" alt="Big" onclick="changeSize(12, this)">	
-		</div>
-		<br>
-		<div class="CanvasContainer">
-			<canvas id="drawingCanvas" width="500" height="300"></canvas>
-		</div>
-		<button onclick="clearCanvas()"><font size="5"> Clear </font></button>
-		<button onclick="saveCanvas()"><font size="5" color="green">Save </font></button>	
-		<p><font size="3" color="blue"> Use right mouse button to download picture </font></p>		
-		<div class="copyContainer">
-			<img id="savedImage"> <br>		
+        <div id="TOOLBARS">
+            <div id="COLOR" class="Toolbar">
+                <img id="black" src="black.png" alt="Black" onclick="changeColor(1, this)">
+                <img id="blue" src="blue.png" alt="Blue" onclick="changeColor(2, this)">
+                <img id="brown" src="brown.png" alt="Brown" onclick="changeColor(3, this)">
+                <img id="green" src="green.png" alt="Green" onclick="changeColor(4, this)">
+                <img id="grey" src="grey.png" alt="Grey" onclick="changeColor(5, this)">
+                <img id="orange" src="orange.png" alt="Orange" onclick="changeColor(6, this)">
+                <img id="pink" src="pink.png" alt="Pink" onclick="changeColor(7, this)">
+                <img id="purple" src="purple.png" alt="Purple" onclick="changeColor(8, this)">
+                <img id="red" src="red.png" alt="Red" onclick="changeColor(9, this)">
+                <img id="white" src="white.png" alt="White" onclick="changeColor(10, this)">
+                <img id="yellow" src="yellow.png" alt="Yellow" onclick="changeColor(11, this)">
+            </div>
+            <hr />
+            <div id="SIZE" class="Toolbar">
+                <img id="small" src="small.png" alt="Small" onclick="changeSize(3, this)">
+                <img id="medium" src="medium.png" alt="Medium" onclick="changeSize(6, this)">
+                <img id="big" src="big.png" alt="Big" onclick="changeSize(12, this)">
+            </div>
+            <hr />
+            <div id="TOOLS" class="Toolbar">
+                <img id="brush" src="brush.png" alt="Brush">
+                <button style="margin-top:10px" onclick="clearCanvas()"><font size="5"> Clear </font></button>
+            </div>
+        </div>
+		<div>
+			<canvas id="drawingCanvas" width="500" height="500"></canvas>
 		</div>
 	</body>
 </html>
