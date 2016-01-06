@@ -66,6 +66,7 @@ function changeColor(color, imgElement) {
 }
 
 var previousSizeElement; // wczesniejszy rozmiar
+
 // funkcja zmieniajaca rozmiar "pedzla" 
 function changeSize(size, imgElement) {
   ctx.lineWidth = size;
@@ -73,11 +74,3 @@ function changeSize(size, imgElement) {
   if (previousSizeElement != null) previousSizeElement.className = "";
   previousSizeElement = imgElement;
 }																																		
-
-// funkcja zapisujaca obraz narysowany przez uzytkownika
-function saveCanvas() {
-	var image = document.getElementById("savedImage");
-	image.src = canvas.toDataURL();
-	var imageContainer = document.getElementById("copyContainer");
-	imageContainer.style.display = "block";
-}

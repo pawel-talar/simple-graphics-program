@@ -1,32 +1,53 @@
 body {
+  width: 720px;
   background: white;
+  margin: 0px;
+  margin: auto;
+  margin-top: 20px;
 }
 
-.Toolbar {
+#COLOR {
+  width: 100px;
+}
+
+#SIZE {
+  clear: left;
+  width: 100px;
+}
+
+#TOOLS {
+  clear: left;
+  width: 100px;
+}
+
+#TOOLBARS {
+  height: 500px;
   float: left;
-  font-family: 'Verdana'; 
-  font-size: 18px;
-  font-variant: normal;
-  text-align: center;
   background: #F2D7FE;
-  padding: 10px 15px 3px 10px;
-  margin-bottom: 1px;
-  margin-right: 1px;
   border: 2px solid #7B899B;
 }
 
+.Toolbar {
+  font-family: 'Verdana';
+  font-size: 18px;
+  font-variant: normal;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 1px;
+  margin-right: 1px;
+  /*border: 2px solid #7B899B;*/
+}
+
 .Toolbar button {
-  padding: 6px;
-  margin: 7px 2px;
+  padding: 2px;
+  margin: 2px 2px;
   font-variant: normal;
   font-size: 12px;
 }
 
-.CanvasContainer {
-  clear: both;
-}
-
 canvas {
+  margin-left: 10px;
   border: 1px solid #7B899B;
 }
 
@@ -35,14 +56,8 @@ img {
   border: 2px solid #F2F7FE;
 }
 
-img:hover {
-  border: 2px groove #E4F0FE;
-  background: white;
-}
-
-
 img.Selected {
-  border: 3px groove #E4F0FE;
+  border: 2px groove #E4F0FE;
 }
 
 #copyContainer {
