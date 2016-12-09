@@ -12,7 +12,7 @@ window.onload = function() {
 };
 
 // funkcja dodajaca tlo w kolorze bialym
-function addBackground() {	
+function addBackground() {
 	ctx.fillStyle = "white";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
@@ -25,17 +25,17 @@ function startDrawing(e) { // funkcja odpowiadajaca za rozpoczecie rysowania
   ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop); // przesuniece olowka w miejsce, w którym znajduje sie kursor myszki
 }
 
-function stopDrawing() {  
+function stopDrawing() {
   isDrawing = false;
 }
- 
+
 function draw(e) { // funkcja rysujaca
   if (isDrawing == true) { // jesli masz rysowac to...
     // ustalanie wpolrzednych rysowanej linii
     var x = e.pageX - canvas.offsetLeft;
-    var y = e.pageY - canvas.offsetTop;   
-    ctx.lineTo(x, y); // zaznaczenie linii o powyzszych wspolrzednych 
-    ctx.stroke(); // narysowanie zadanej linii	
+    var y = e.pageY - canvas.offsetTop;
+    ctx.lineTo(x, y); // zaznaczenie linii o powyzszych wspolrzednych
+    ctx.stroke(); // narysowanie zadanej linii
   }
 }
 
@@ -48,7 +48,7 @@ function clearCanvas() {
 
 var previousColorElement; // wczesniejszy kolor z palety
 // funkcja zmieniajaca kolor na wybrany z palety
-function changeColor(color, imgElement) {  	
+function changeColor(color, imgElement) {
   if (color == 1) ctx.strokeStyle = "black";
   else if (color == 2) ctx.strokeStyle = "blue";
   else if (color == 3) ctx.strokeStyle = "brown";
@@ -59,7 +59,7 @@ function changeColor(color, imgElement) {
   else if (color == 8) ctx.strokeStyle = "purple";
   else if (color == 9) ctx.strokeStyle = "red";
   else if (color == 10) ctx.strokeStyle = "white";
-  else if (color == 11) ctx.strokeStyle = "gold"; 
+  else if (color == 11) ctx.strokeStyle = "gold";
   imgElement.className = "Selected";
   if (previousColorElement != null) previousColorElement.className = "";
   previousColorElement = imgElement;
@@ -67,10 +67,10 @@ function changeColor(color, imgElement) {
 
 var previousSizeElement; // wczesniejszy rozmiar
 
-// funkcja zmieniajaca rozmiar "pedzla" 
+// funkcja zmieniajaca rozmiar "pedzla"
 function changeSize(size, imgElement) {
   ctx.lineWidth = size;
   imgElement.className = "Selected";
   if (previousSizeElement != null) previousSizeElement.className = "";
   previousSizeElement = imgElement;
-}																																		
+}
